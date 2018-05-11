@@ -1,0 +1,30 @@
+cities = (
+    ('Ambarlı', 'Ambarlı'),
+    ('Armutlu', 'Armutlu'),
+    ('Armutlu Tatil Köyü', 'Armutlu Tatil Köyü'),
+    ('Avcılar', 'Avcılar'),
+    ('Avşa Adası', 'Avşa Adası'),
+    ('Bandırma', 'Bandırma'),
+    ('Beşiktaş', 'Beşiktaş'),
+    ('Bostancı', 'Bostancı'),
+    ('Bursa Güzel Yalı', 'Bursa Güzel Yalı'),
+    ('Çınarcık', 'Çınarcık'),
+    ('Esenköy', 'Esenköy'),
+    ('Kadıköy', 'Kadıköy'),
+    ('Kartal', 'Kartal'),
+    ('Kumla', 'Kumla'),
+    ('Marmara Adası', 'Marmara Adası'),
+    ('Pendik', 'Pendik'),
+    ('Topçular', 'Topçular'),
+    ('Tuzla', 'Tuzla'),
+    ('Yalova', 'Yalova'),
+    ('Yalova Do', 'Yalova Do'),
+    ('Yenikapı', 'Yenikapı'),
+)
+
+vehicles = (
+    ('Without vehicle', 'Without vehicle'),
+    ('Bus', 'Bus + 40TL'),
+    ('Truck', 'Truck + 60TL'),
+    ('Car', 'Car + 20TL'),
+)

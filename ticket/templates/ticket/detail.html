@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <style>
+      /*menu*/
+      ul.menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li.menu {
+        float: left;
+      }
+
+      li.menu a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li.menu a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      .active {
+        background-color: #4CAF50;
+      }
+
+      /*form*/
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+          background-color: #45a049;
+      }
+
+      /*divs*/
+      div.wrapper {
+        border-radius: 5px;
+      }
+      div.journey {
+
+      }
+
+      /*journey*/
+      ul.journey {
+        overflow: auto;
+        list-style-type: none;
+      }
+
+      li.journey {
+
+        float: left;
+        margin-right: 0px;
+        border-right: 1px solid #aaa;
+        padding: 0 20px;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class"wrapper">
+      <h3>Ferry Journey Reservation System</h3>
+
+      <div class="menu">
+        <ul class="menu">
+          <li class="menu"><a  href="/">Home</a></li>
+          <li class="menu"><a  href="/contact/">Contact</a></li>
+          <li class="menu"><a  href="/about/">About</a></li>
+        </ul>
+      </div>
+
+      <div class="journey">
+        <ul class="journey">
+
+            <li class="journey">Departure: {{ journey.departure_city }}</li>
+            <li class="journey">Destination: {{ journey.destination_city }}</li>
+            <li class="journey">Date: {{ journey.journey_date }}</li>
+            <li class="journey">Price: {{ journey.price }} TL</li>
+
+        </ul>
+      </div>
+      {% if error %}
+        {{ error }}<br><br>
+      {% else %}
+        <div class="form">
+          {% if journey_id %}
+            <form action="/{{ journey.id }}/" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <br><br><input type="submit" value="Submit" />
+            </form>
+          {% endif %}
+          {% if the_passanger %}
+            Your reservation has been successfully created.<br>
+            <h3>{{ the_passanger }}</h3>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    capacity = {{ journey.capacity }}<br>
+    passanger count = {{ journey.passanger_set.count }}
+  </body>
+</html>
